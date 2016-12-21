@@ -138,16 +138,19 @@ INSTALLED_APPS = (
     'djangocms_text_ckeditor',
     'filer',
     'easy_thumbnails',
+    'mptt',
     'djangocms_column',
     'djangocms_link',
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
     'cmsplugin_filer_utils',
-    'djangocms_style',
+    #'djangocms_style',
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
+    'aldryn_style',
+    'aldryn_bootstrap3',
     'fmsb_site'
 )
 
@@ -186,7 +189,7 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ## Customize this
     ('page.html', 'Page'),
-    ('feature.html', 'Page with Feature')
+    ('feature.html', 'Page with Feature'),
     ('home.html', 'Home Page')
 )
 
@@ -216,3 +219,24 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+
+
+# https://github.com/divio/djangocms-text-ckeditor
+# https://youtu.be/NbsRVfLCE1U?t=3617
+# https://docs.pixelandtonic.com/wygwam/using/style_set.html
+#----------------------------------------------------------
+#                   Text Editor
+#----------------------------------------------------------
+# CKEDITOR_CONFIGS = {
+#     # 'toolbar' : 'CMS',
+#     # 'toolbar_CMS': [
+#     #     ['Undo', 'Redo'],
+#     #     ['cmsplugins', '-', 'ShowBlocks'],
+#     #     ['Font']
+#     # ],
+#     # 'extraPlugins': 'font',
+#
+#     'stylesSet' : {
+#     }
+# }
