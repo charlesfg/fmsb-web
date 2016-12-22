@@ -151,8 +151,13 @@ INSTALLED_APPS = (
     'djangocms_video',
     'aldryn_style',
     'aldryn_bootstrap3',
+    'dbbackup',
     'fmsb_site'
 )
+
+
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': os.path.join(DATA_DIR, 'db_bkps')}
 
 LANGUAGES = (
     ## Customize this
@@ -190,7 +195,8 @@ CMS_TEMPLATES = (
     ## Customize this
     ('page.html', 'Page'),
     ('feature.html', 'Page with Feature'),
-    ('home.html', 'Home Page')
+    ('home.html', 'Home Content'),
+    ('home2.html', 'Home Html')
 )
 
 CMS_PERMISSION = True
@@ -228,15 +234,37 @@ THUMBNAIL_PROCESSORS = (
 #----------------------------------------------------------
 #                   Text Editor
 #----------------------------------------------------------
-# CKEDITOR_CONFIGS = {
-#     # 'toolbar' : 'CMS',
-#     # 'toolbar_CMS': [
-#     #     ['Undo', 'Redo'],
-#     #     ['cmsplugins', '-', 'ShowBlocks'],
-#     #     ['Font']
-#     # ],
-#     # 'extraPlugins': 'font',
-#
-#     'stylesSet' : {
-#     }
-# }
+CKEDITOR_SETTINGS = {
+    # 'toolbar' : 'CMS',
+    # 'toolbar_CMS': [
+    #     ['Undo', 'Redo'],
+    #     ['cmsplugins', '-', 'ShowBlocks'],
+    #     ['Font']
+    # ],
+    # 'extraPlugins': 'font',
+
+    # 'stylesSet' : [
+    #     {
+    #         'name' : 'Caurousel Element Title',
+    #         'element' : 'h1',
+    #         'atributes' : {
+    #             'class': 'animation'
+    #         }
+    #     },
+    #     {
+    #         'name' : 'Caurousel Element Subitle',
+    #         'element' : 'h2',
+    #         'atributes' : {
+    #             'class': 'animation animated-item-2'
+    #         }
+    #     },
+    #     {
+    #         'name' : 'Caurousel Element Button',
+    #         'element' : 'a',
+    #         'atributes' : {
+    #             'class': 'btn-slide animation animated-item-3'
+    #         }
+    #     },
+    #
+    # ]
+}
