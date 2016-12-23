@@ -1,72 +1,121 @@
 {% extends 'base.html' %}
-
-{% load cms_tags %}
+{% load cms_tags staticfiles %}
 
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 {% block content %}
+    <section id="carousel" >
+        {% placeholder carousel %}
+    </section>
 
-    {% placeholder content or  %}
-        <section id="feature" >
+    <section id="feature" class="fmsb-services" >
+            <div class="container">
+                <div class="center wow fadeInDown">
+                    {% placeholder services-head %}
+                </div>
+
+                <div class="row">
+                    <div class="features">
+                        <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="feature-wrap">
+                                {% placeholder service_1 %}
+                            </div>
+                        </div><!--/.col-md-4-->
+
+                        <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="feature-wrap">
+                                {% placeholder service_2 %}
+                            </div>
+                        </div><!--/.col-md-4-->
+
+                        <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="feature-wrap">
+                                {% placeholder service_3 %}
+                            </div>
+                        </div><!--/.col-md-4-->
+
+                        <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="feature-wrap">
+                                {% placeholder service_4 %}
+                            </div>
+                        </div><!--/.col-md-4-->
+
+                        <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="feature-wrap">
+                                {% placeholder service_5 %}
+                            </div>
+                        </div><!--/.col-md-4-->
+
+                        <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="feature-wrap">
+                                {% placeholder service_6 %}
+                            </div>
+                        </div><!--/.col-md-4-->
+                    </div><!--/.services-->
+                </div><!--/.row-->
+            </div><!--/.container-->
+        </section><!--/#feature-->
+
+    <section id="join">
         <div class="container">
-           <div class="center wow fadeInDown">
-                <h2>Conteúdo Default</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="form-inline center wow fadeInDown" id="join-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="join-email-input" placeholder="<insira seu e-mail aqui>">
+                        </div>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i>  &nbsp; Filie-se</button>
+                    </form>
+                </div>
             </div>
 
-            <div class="row">
-                <div class="features">
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-bullhorn"></i>
-                            <h2>Fresh and Clean</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-comments"></i>
-                            <h2>Retina ready</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-cloud-download"></i>
-                            <h2>Easy to customize</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-leaf"></i>
-                            <h2>Adipisicing elit</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-cogs"></i>
-                            <h2>Sed do eiusmod</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-heart"></i>
-                            <h2>Labore et dolore</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-                </div><!--/.services-->
-            </div><!--/.row-->
         </div><!--/.container-->
-</section><!--/#feature-->
-    {% endplaceholder %}
+    </section><!--/#join-->
+
+
+    <section id="partner">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                {% placeholder partners %}
+            </div>
+
+            <div class="partners">
+                <ul>
+                    <li>
+                        <a href="#">
+                        <img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms"
+                             src="{% static "images/partners/partner1.png" %}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms"
+                                 src="{% static "images/partners/partner2.png" %}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms"
+                                 src="{% static "images/partners/partner3.png" %}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms"
+                             src="{% static "images/partners/partner4.png" %}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms"
+                                src="{% static "images/partners/partner5.png" %}">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div><!--/.container-->
+    </section><!--/#partner-->
+
+
 
 {% endblock content %}

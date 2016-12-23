@@ -23,26 +23,35 @@ h6 {
   color:#4e4e4e;
 }
 
-/* http://stackoverflow.com/questions/15649244/responsive-font-size */
+/* http://stackoverflow.com/questions/15649244/responsive-font-size
+1vw = 1% of viewport width
+1vh = 1% of viewport height
+1vmin = 1vw or 1vh, whichever is smaller
+1vmax = 1vw or 1vh, whichever is larger
+ */
 h1{
-  font-size: 4.0vw;
-  color:#fff;
+  font-size: 5.9vmin;
 }
 
 h2{
-   font-size: 3.0vw;
+  /*font-size: 36 px;*/
+   font-size: 4.9vmin;
 }
 
 h3{
   /*font-size: 16px;*/
-  font-size: 2.0vw;
+  font-size: 3.5vmin;
   color: #FFFFFF;
   font-weight: 400;
-  line-height: 24px;
+
 }
 
 h4{
-  font-size: 2.0vw;
+  font-size: 2.9vmin;
+}
+
+p {
+  font-size: 1.5vmin;
 }
 
 a {
@@ -117,7 +126,7 @@ a:focus {
 }
 
 body > section {
-  padding: 70px 0;
+  padding: 15px 0;
 }
 
 .center {
@@ -131,9 +140,9 @@ body > section {
 }
 
 .lead{
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+    font-size: 2.5vmin;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .transparent-bg {
@@ -951,7 +960,7 @@ a.accordion-toggle  i{
 }
 
 #partner {
-  background: url(../images/partners/partner_bg.png) 50% 50% no-repeat;
+  background: url(../images/partners/partner_bg.jpg) 50% 50% no-repeat;
   background-size: cover;
 }
 
