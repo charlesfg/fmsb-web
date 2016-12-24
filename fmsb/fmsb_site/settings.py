@@ -196,7 +196,7 @@ CMS_TEMPLATES = (
     ('page.html', 'Page'),
     ('feature.html', 'Page with Feature'),
     ('home.html', 'Home Content'),
-    ('home2.html', 'Home Html')
+    ('filiacao.html', 'Filiacao')
 )
 
 CMS_PERMISSION = True

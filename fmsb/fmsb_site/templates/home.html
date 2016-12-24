@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load cms_tags staticfiles %}
+{% load cms_tags staticfiles sekizai_tags %}
 
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
@@ -60,11 +60,48 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <form class="form-inline center wow fadeInDown" id="join-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="join-email-input" placeholder="<insira seu e-mail aqui>">
+                    <form id="join-form" action="/filie-se/"
+                          class="form-inline center wow fadeInDown">
+                        <div class="form-group has-feedback">
+                            <input type="email" class="form-control" id="join-email-input"
+                                   data-toggle="tooltip" data-placement="top"
+                                   name="email"
+                                   title="Inicie seu cadastro aqui preenchendo seu e-mail!"
+                                   placeholder="<insira seu e-mail aqui>">
+                            {% addtoblock "js" %}
+                                <script>
+                                    $(function () {
+                                        $('[data-toggle="tooltip"]').tooltip()
+                                    })
+                                    $(document).ready(function() {
+                                        $('#join-form').formValidation({
+                                            locale: 'pt_BR',
+                                            framework: 'bootstrap',
+                                            icon: {
+                                                valid: 'glyphicon glyphicon-ok',
+                                                invalid: 'glyphicon glyphicon-remove',
+                                                validating: 'glyphicon glyphicon-refresh'
+                                            },
+                                            fields: {
+                                                email: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: 'O endereço de e-mail é obrigatório'
+                                                        },
+                                                        emailAddress: {
+                                                            message: 'Este e-mail parece não ser válido.'
+                                                        }
+                                                    }
+                                                },
+                                            }
+                                        });
+                                    });
+                                </script>
+                            {% endaddtoblock %}
                         </div>
-                        <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i>  &nbsp; Filie-se</button>
+                        <button type="submit" class="btn btn-success" disabled="disabled">
+                            <i class="fa fa-check-square-o"></i>  &nbsp; Filie-se
+                        </button>
                     </form>
                 </div>
             </div>

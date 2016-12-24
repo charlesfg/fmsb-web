@@ -159,6 +159,21 @@ footer {
 
 #join-email-input {
   margin: auto;
+  margin-right: 15px; !important;
   width: 250px;
   text-align: center;
+}
+
+
+.fv-form-bootstrap .help-block{
+  background: whitesmoke;
+}
+
+#join-form > div > i.fv-icon-no-label {
+    top: 4px;
+    right: 7px;
+}
+
+#filiacao {
+    padding-top: 30px;
 }

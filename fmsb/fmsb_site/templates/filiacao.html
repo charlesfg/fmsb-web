@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load cms_tags staticfiles sekizai_tags %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+    <section id="filiacao">
+        <div class="container">
+            <div class="center">
+                <h2>Filie-se</h2>
+                <p class="lead">Faça seu cadastro para se tornar um atleta credenciado junto a <b>FMSB</b></p>
+            </div>
+            <div class="row contact-wrap">
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <input type="text" name="name" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input id="join-id-email" type="email" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Subject *</label>
+                            <input type="text" name="subject" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section>
+
+    {% addtoblock 'js' %}
+        <script>
+        $(document).ready(function () {
+            var email = getParameterByName("email");
+            if(email) {
+                $('#join-id-email').val(email);
+            }
+        })
+        </script>
+    {% endaddtoblock %}
+{% endblock %}
